@@ -14,6 +14,73 @@ This script automates the creation of a **modular, Docker-ready microservice** u
 
 ---
 
+## ✅ Requirements
+
+### 1. Install [Bun](https://bun.sh)
+
+```bash
+curl -fsSL https://bun.sh/install | bash
+```
+
+Check if installed:
+
+```bash
+bun --version
+```
+
+---
+
+### 2. Create a base folder (if you don’t have one)
+
+```bash
+mkdir microservice-generator && cd microservice-generator
+bun init -y
+```
+
+---
+
+### 3. Install the required dependency
+
+```bash
+bun add prompts
+```
+
+---
+### 4. Install TypeScript types for Express and Node
+
+```bash
+bun add -d @types/express @types/node
+```
+
+### 4. Enable ESM in your `package.json`
+
+```json
+{
+  "type": "module"
+}
+```
+
+---
+
+### 5. (Optional) Add a basic `tsconfig.json`
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "resolveJsonModule": true
+  }
+}
+```
+
+---
+
+## 🚀 Run the script
+
 ## 📦 Usage
 
 ### 1. Run the script
