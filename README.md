@@ -49,7 +49,7 @@ bun add prompts
 ### 4. Install TypeScript types for Express and Node
 
 ```bash
-bun add -d @types/express @types/node
+bun add -d @types/express @types/node @types/prompts
 ```
 
 ### 4. Enable ESM in your `package.json`
