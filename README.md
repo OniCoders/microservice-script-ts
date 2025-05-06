@@ -133,6 +133,92 @@ services/order-item/
 └── README.md
 ```
 
+## 📂 Folder Structure
+
+
+### 📂 controllers/
+
+**Responsibility:** Handle HTTP requests and responses.
+
+- Entry point for routes
+- Calls the corresponding service methods
+- Does not contain business logic
+
+---
+
+### 📂 services/
+
+**Responsibility:** Business logic layer.
+
+- Contains core logic of the application
+- Orchestrates repository and DTO usage
+- Stateless and testable
+
+---
+
+### 📂 repositories/
+
+**Responsibility:** Data access abstraction.
+
+- Direct interaction with the database (e.g., MongoDB)
+- Provides CRUD and query methods
+
+---
+
+### 📂 routes/
+
+**Responsibility:** Express route definitions.
+
+- Maps endpoints to controller methods
+- Uses dependencies from the `di` folder
+
+---
+
+### 📂 models/
+
+**Responsibility:** Domain models or data interfaces.
+
+- Defines the shape of database entities
+- Shared across services and repositories
+
+---
+
+### 📂 dtos/
+
+**Responsibility:** Data Transfer Objects.
+
+- Separates transport layer data from domain models
+- Includes input (create) and output (update) schemas
+
+---
+
+### 📂 types/
+
+**Responsibility:** Shared types and definitions.
+
+- For common utilities, enums, helper types, etc.
+- Example: API responses, error shapes
+
+---
+
+### 📂 di/
+
+**Responsibility:** Manual dependency injection.
+
+- Instantiates classes and connects them
+- Injects repository → service → controller
+- Used to decouple construction logic
+
+---
+
+### 📂 src/
+
+**Responsibility:** Entry point (`index.ts`).
+
+- Bootstraps the Express server
+- Sets up middleware and MongoDB
+- Mounts routes
+
 ---
 
 ## 🧪 Endpoints
